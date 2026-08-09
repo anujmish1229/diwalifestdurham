@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Durham Diwali Festival brings the Festival of Lights to Ajax for the first time in 2026 — music, dance, food, and community celebration across Durham Region."
+    />
+    <meta property="og:title" content="Durham Diwali Festival 2026" />
+    <meta
+      property="og:description"
+      content="Join us in Ajax for a vibrant celebration of light, culture, and community — October 2026."
+    />
+    <meta property="og:type" content="website" />
+    <title>Durham Diwali Festival 2026 | Festival of Lights in Ajax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--
+      Netlify Forms detection: Netlify's build bot parses the built, static
+      HTML for <form> tags — it cannot see forms injected by React at
+      runtime. These hidden forms are never rendered or shown to users;
+      they exist only so Netlify registers the form names/fields at deploy
+      time. The real forms in React submit to these same names via fetch.
+    -->
+    <form name="newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+      <input name="bot-field" />
+    </form>
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
