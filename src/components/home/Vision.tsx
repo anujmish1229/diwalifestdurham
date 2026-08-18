@@ -14,17 +14,13 @@ export default function Vision() {
               Our vision is to establish the Durham Diwali Festival as a
               signature annual celebration that illuminates our region with
               culture, connection, and community pride. We aspire to create
-              a festival that grows each year into a unifying tradition — one
+              a festival that grows each year into a unifying tradition, one
               that reflects the diversity of Durham, strengthens
               intercultural understanding, and offers a joyful space where
               every resident feels seen, welcomed, and included.
             </p>
             <p>
-              Guided by the leadership of{" "}
-              <span className="font-semibold text-diya-800">
-                H.A.N.D., the Educators&rsquo; Hindu Affinity Network of Durham
-              </span>
-              , we envision a future where Diwali in Ajax becomes a vibrant
+              We envision a future where Diwali in Ajax becomes a vibrant
               regional gathering that inspires youth, uplifts families, and
               showcases the richness of South Asian heritage through light,
               art, food, and shared experiences.
@@ -45,9 +41,8 @@ export default function Vision() {
             </blockquote>
             <div className="mt-8 h-px w-16 bg-saffron-400" />
             <p className="mt-6 text-sm text-white/60">
-              Presented by H.A.N.D. — Educators&rsquo; Hindu Affinity Network
-              of Durham, in partnership with the Durham District School
-              Board.
+              Presented by the Durham Diwali Festival Organizing Committee,
+              in partnership with the Durham District School Board.
             </p>
           </div>
         </div>

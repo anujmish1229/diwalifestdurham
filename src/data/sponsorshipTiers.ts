@@ -14,7 +14,7 @@ export const sponsorshipTiers: SponsorshipTier[] = [
     name: "Diya",
     subtitle: "Presenting Sponsor",
     price: "$20,000",
-    tagline: "Top tier — symbolizing the light that leads the festival",
+    tagline: "Top tier, symbolizing the light that leads the festival",
     benefits: [
       "Exclusive presenting sponsor recognition",
       "Logo prominence on all festival materials",

@@ -9,10 +9,10 @@ export default function Footer() {
     <footer className="bg-diya-950 text-white/80">
       <div className="container-page grid gap-10 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Logo variant="light" />
+          <Logo />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
             Bringing the Festival of Lights to Ajax for the first time in
-            2026 — an inclusive, community-centred celebration of music,
+            2026, an inclusive, community-centred celebration of music,
             dance, food, and connection across Durham Region.
           </p>
           <div className="mt-5 flex items-center gap-3">
@@ -68,8 +68,8 @@ export default function Footer() {
             Presented By
           </h3>
           <p className="mt-4 text-sm leading-relaxed text-white/60">
-            H.A.N.D. — Educators&rsquo; Hindu Affinity Network of Durham, in
-            partnership with the Durham District School Board.
+            The Durham Diwali Festival Organizing Committee, in partnership
+            with the Durham District School Board.
           </p>
           <p className="mt-3 text-sm text-white/60">North Ajax, Durham Region · October 2026</p>
         </div>

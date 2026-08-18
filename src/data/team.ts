@@ -21,15 +21,7 @@ export const team: TeamMember[] = [
     bio: "Puneet Aujla is a dedicated funeral services professional with the Ajax Crematorium & Visitation Centre, where he supports families with compassion, dignity, and cultural understanding. With extensive experience supporting families across the Greater Toronto Area, Puneet is known for his steady leadership, empathy, and professionalism. Puneet is also a proud contributing sponsor of the Durham Diwali Festival, demonstrating his belief in uplifting cultural initiatives and strengthening community connection. As a member of the organizing team, he brings strong organizational skills, a community-minded approach, and a passion for cultural celebration.",
   },
   {
-    name: "Deepti Jolly",
-    role: "Director",
-  },
-  {
     name: "Nidhi Mishra",
-    role: "Director",
-  },
-  {
-    name: "Sabrina Brijmohan",
     role: "Director",
   },
   {
@@ -38,10 +30,10 @@ export const team: TeamMember[] = [
   },
   {
     name: "Nancy Henry",
-    role: "Director / Advisor",
+    role: "Advisor",
   },
   {
     name: "Marilyn Crawford",
-    role: "Director / Advisor",
+    role: "Advisor",
   },
 ];

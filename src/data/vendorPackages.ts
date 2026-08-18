@@ -16,37 +16,6 @@ export interface VendorEvent {
 
 export const vendorEvents: VendorEvent[] = [
   {
-    id: "hand",
-    title: "H.A.N.D. Cultural Celebration",
-    time: "11 a.m. – 4 p.m.",
-    description:
-      "A daytime event focused on cultural education, family engagement, and community connection — attracting students, families, educators, and community partners from across Durham Region.",
-    packages: [
-      {
-        id: "hand-standard",
-        name: "Standard Vendor Booth",
-        price: "$50",
-        benefits: [
-          "10x10 vendor space",
-          "Table + two chairs",
-          "Access to student, family, and educator audience",
-          "Listing on event program and social media",
-        ],
-      },
-      {
-        id: "hand-food",
-        name: "Food Vendor Booth",
-        price: "$250",
-        benefits: [
-          "10x10 space with food-safe setup",
-          "Access to daytime family crowd",
-          'Listing on "Food at the Festival" page',
-          "Option to sell snacks, sweets, or cultural foods",
-        ],
-      },
-    ],
-  },
-  {
     id: "diwali",
     title: "Durham Diwali Festival",
     time: "5 p.m. – 11 p.m.",
@@ -90,17 +59,3 @@ export const vendorEvents: VendorEvent[] = [
     ],
   },
 ];
-
-export const vendorBundle = {
-  name: "Full-Day Vendor Bundle",
-  subtitle: "Both Events",
-  price: "$500",
-  savings: "Save up to $150",
-  benefits: [
-    "10x10 booth for both events",
-    "Priority placement for the evening festival",
-    "Listing in both event programs",
-    "Social media promotion across both organizers",
-    "Option to run a full-day activation or two separate offerings",
-  ],
-};

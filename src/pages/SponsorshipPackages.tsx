@@ -9,7 +9,7 @@ export default function SponsorshipPackages() {
       <PageHero
         eyebrow="Partner With Us"
         title="Sponsorship Packages"
-        description="Illuminate Durham Region's first-ever Diwali festival — six tiers of partnership designed to fit organizations of every size."
+        description="Illuminate Durham Region's first-ever Diwali festival: six tiers of partnership designed to fit organizations of every size."
       />
 
       <section className="container-page py-20 sm:py-24">
@@ -22,8 +22,7 @@ export default function SponsorshipPackages() {
             <p>
               We are pleased to introduce the Durham Diwali Festival, a
               landmark cultural event coming to our region for the very
-              first time in October 2026. Founded by H.A.N.D. — the
-              Educators&rsquo; Hindu Affinity Network of Durham — with the
+              first time in October 2026. Founded in partnership with the
               Durham District School Board, this festival will bring the
               spirit, colour, and joy of the Festival of Lights to the heart
               of North Ajax.
@@ -79,8 +78,6 @@ export default function SponsorshipPackages() {
               Warm regards,
               <br />
               Durham Diwali Festival Organizing Team
-              <br />
-              H.A.N.D. — Educators&rsquo; Hindu Affinity Network of Durham
             </p>
           </div>
         </div>
