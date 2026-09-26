@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T16:03:44Z",
+  "title": "Design System: Durham Diwali Festival",
+  "extensions": {
+    "colorMeta": {
+      "ink-night": { "role": "neutral", "displayName": "Ink Night", "canonical": "#1a1023", "tonalRamp": ["#120616", "#17081f", "#1c0a2c", "#210536", "#33094e", "#4c1170", "#6d17a0", "#8a1fc9"] },
+      "saffron": { "role": "primary", "displayName": "Saffron", "canonical": "#ff7f0d", "tonalRamp": ["#471604", "#84300e", "#a3390d", "#ce4805", "#f96204", "#ff9d32", "#ffc06d", "#ffefd3"] },
+      "saffron-pale": { "role": "neutral", "displayName": "Saffron-Lit Card Surface", "canonical": "#fff8ed", "tonalRamp": ["#ffefd3", "#fff8ed"] },
+      "marigold": { "role": "secondary", "displayName": "Marigold Bulb", "canonical": "#ffc233", "tonalRamp": ["#f2a900", "#ffc233", "#ffd166"] },
+      "diya-purple": { "role": "tertiary", "displayName": "Diya Purple (incumbent night-sky hue)", "canonical": "#a238e8", "tonalRamp": ["#210536", "#33094e", "#4c1170", "#6d17a0", "#8a1fc9", "#a238e8", "#bd63fb", "#d69bff"] },
+      "card-ink-text": { "role": "neutral", "displayName": "Card Ink Text", "canonical": "#1a1023" }
+    },
+    "typographyMeta": {
+      "marquee": { "displayName": "Marquee (Bungee)", "purpose": "h1 only, every page: hero headline, page-hero banners, 404." },
+      "display": { "displayName": "Display (Baloo 2)", "purpose": "h2-h4: section headings, card titles, tier/package names and prices." },
+      "body": { "displayName": "Body (Mukta)", "purpose": "Paragraph copy, letters, benefit lists, nav labels." }
+    },
+    "shadows": [
+      { "name": "glow", "value": "0 0 40px rgba(255,194,51,0.35)", "purpose": "Broad ambient marigold wash behind lit elements." },
+      { "name": "bulb", "value": "0 0 0 3px rgba(255,194,51,0.28), 0 8px 24px -4px rgba(255,127,13,0.45)", "purpose": "Primary button glow (bulb-halo ring + warm drop)." },
+      { "name": "lantern", "value": "0 0 32px 6px rgba(255,194,51,0.35), 0 0 64px 16px rgba(162,56,232,0.2)", "purpose": "Featured tier/package stall-card glow." },
+      { "name": "stall", "value": "0 20px 45px -20px rgba(8,2,16,0.6)", "purpose": "Default stall-card ink-black diffuse drop shadow at rest." }
+    ],
+    "motion": [
+      { "name": "twinkle", "value": "twinkle 2.6s ease-in-out infinite (opacity 0.55->1, scale 0.92->1.08)", "purpose": "String-light bulb glow animation, per-bulb staggered delay." },
+      { "name": "sway", "value": "sway 6s ease-in-out infinite (rotate -1.2deg to 1.2deg)", "purpose": "Reserved gentle-sway motion token." },
+      { "name": "drift", "value": "drift 5s ease-in-out infinite (translateY 0 to -6px)", "purpose": "Reserved gentle-float motion token." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pill button, marigold-to-saffron gradient, ink text, bulb glow. Single primary action per view.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Get Event Updates</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; background: linear-gradient(180deg, #ffd166, #ff7f0d); color: #1a1023; padding: 12px 24px; font-size: 14px; font-weight: 700; box-shadow: 0 0 0 3px rgba(255,194,51,0.28), 0 8px 24px -4px rgba(255,127,13,0.45); transition: filter 0.2s, box-shadow 0.2s, transform 0.1s; } .ds-btn-primary:hover { filter: brightness(1.05); box-shadow: 0 0 0 3px rgba(255,194,51,0.4), 0 10px 28px -4px rgba(255,127,13,0.55); } .ds-btn-primary:focus-visible { outline: 2px solid #ffd166; outline-offset: 2px; } .ds-btn-primary:active { transform: scale(0.98); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined translucent pill for second-priority CTAs on the dark ground.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Become a Sponsor</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; background: rgba(255,255,255,0.05); border: 2px solid rgba(255,192,109,0.5); color: rgba(255,248,237,0.9); padding: 12px 24px; font-size: 14px; font-weight: 700; backdrop-filter: blur(6px); transition: border-color 0.2s, background 0.2s; } .ds-btn-secondary:hover { border-color: #ffc06d; background: rgba(255,255,255,0.1); } .ds-btn-secondary:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "White-filled outline pill used on light stall-card surfaces for non-featured tier/package CTAs.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Become a Diya Sponsor</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; border: 2px solid rgba(109,23,160,0.3); background: #ffffff; color: #4c1170; padding: 12px 24px; font-size: 14px; font-weight: 700; transition: border-color 0.2s, background 0.2s; } .ds-btn-outline:hover { border-color: #6d17a0; background: #fdf5ff; } .ds-btn-outline:focus-visible { outline: 2px solid #8a1fc9; outline-offset: 2px; }"
+    },
+    {
+      "name": "Stall Card",
+      "kind": "card",
+      "refersTo": "stall-card",
+      "description": "Signature container: scalloped canvas-awning top trim (CSS mask) over a saffron-lit surface with ink text. Reused for sponsor tiers, vendor packages, and hero entry cards.",
+      "html": "<div class=\"ds-stall-card\"><div class=\"ds-stall-awning\"></div><h3>Diya Tier</h3><p class=\"ds-price\">$2,500</p></div>",
+      "css": ".ds-stall-card { position: relative; border-radius: 1.75rem; background: #fff8ed; color: #1a1023; box-shadow: 0 20px 45px -20px rgba(8,2,16,0.6); padding: 28px 24px 24px; } .ds-stall-awning { position: absolute; inset-inline: 0; top: 0; height: 14px; transform: translateY(-1px); background: repeating-linear-gradient(90deg, #ce4805 0 22px, #ff9d32 22px 44px); -webkit-mask-image: radial-gradient(circle at 11px 0, transparent 10px, black 11px); mask-image: radial-gradient(circle at 11px 0, transparent 10px, black 11px); -webkit-mask-size: 22px 16px; mask-size: 22px 16px; -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x; border-radius: 1.75rem 1.75rem 0 0; } .ds-stall-card h3 { font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 800; font-size: 20px; } .ds-price { font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 800; font-size: 28px; margin-top: 8px; }"
+    },
+    {
+      "name": "Price-Tag Pillar",
+      "kind": "custom",
+      "refersTo": "price-tag",
+      "description": "Hanging price-tag clip-path card with a colored string above it; used for the three Mission pillars in place of a plain icon-card grid.",
+      "html": "<div class=\"ds-price-tag-wrap\"><span class=\"ds-string\"></span><div class=\"ds-price-tag\"><h3>Inclusive by design</h3><p>A community-centred celebration.</p></div></div>",
+      "css": ".ds-price-tag-wrap { position: relative; display: inline-block; padding-top: 36px; } .ds-string { position: absolute; top: 0; left: 32px; width: 2px; height: 28px; background: linear-gradient(180deg, #ff9d32, rgba(255,157,50,0.2)); } .ds-price-tag { clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%); background: #1f0e2b; border: 2px solid rgba(255,157,50,0.33); padding: 28px 24px 28px 40px; color: #fff8ed; box-shadow: 0 20px 45px -20px rgba(8,2,16,0.6); } .ds-price-tag h3 { font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 700; font-size: 18px; }"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Text input with diya-purple border at rest, saffron glow on focus.",
+      "html": "<input class=\"ds-field\" type=\"email\" placeholder=\"you@example.com\" />",
+      "css": ".ds-field { width: 100%; border-radius: 0.75rem; border: 2px solid #f6e6ff; background: #ffffff; color: #1a1023; padding: 12px 16px; font-size: 14px; transition: border-color 0.2s, box-shadow 0.2s; } .ds-field::placeholder { color: #635a6e; } .ds-field:focus { outline: none; border-color: #ff7f0d; box-shadow: 0 0 0 2px rgba(255,192,109,0.6); }"
+    },
+    {
+      "name": "Navbar Active Link",
+      "kind": "nav",
+      "refersTo": "nav-active-bulb",
+      "description": "Nav link with a glowing marigold bulb-dot beneath the active item, driven by scroll-spy IntersectionObserver on Home anchor sections.",
+      "html": "<a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Vision<span class=\"ds-nav-bulb\"></span></a>",
+      "css": ".ds-nav-link { position: relative; border-radius: 9999px; padding: 8px 12px; font-size: 14px; font-weight: 600; color: rgba(255,248,237,0.8); transition: color 0.2s, background 0.2s; } .ds-nav-link:hover { background: rgba(255,255,255,0.05); color: #ffd166; } .ds-nav-link--active { color: #ffd166; } .ds-nav-bulb { position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); height: 6px; width: 6px; border-radius: 9999px; background: #ffd166; box-shadow: 0 0 10px 3px rgba(255,209,102,0.75); }"
+    },
+    {
+      "name": "String Lights Strand",
+      "kind": "custom",
+      "refersTo": "string-lights",
+      "description": "Procedurally generated sagging-wire SVG strand of twinkling bulbs; used at the top edge of the hero, page-hero banners, 404, and the navbar bottom edge.",
+      "html": "<svg class=\"ds-string-lights\" viewBox=\"0 -6 800 56\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M0,0 Q400,42 800,0\" fill=\"none\" stroke=\"rgba(0,0,0,0.55)\" stroke-width=\"1.5\"/><circle cx=\"400\" cy=\"42\" r=\"4.5\" fill=\"#ffd166\"><animate attributeName=\"opacity\" values=\"0.55;1;0.55\" dur=\"2.6s\" repeatCount=\"indefinite\"/></circle></svg>",
+      "css": ".ds-string-lights { width: 100%; height: 40px; color: #ffc06d; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Night Bazaar & String Lights",
+    "overview": "The site is the night market itself, caught at rest just before the crowd arrives: a near-black ink-night ground strung with warm saffron and marigold fairy-light bulbs, lit stalls (sponsor tiers, vendor packages, team pillars, the sponsor/vendor letters) glowing against the dark, and hand-lettered marquee signage announcing the event. This replaced a generic purple-gradient-hero-plus-three-icon-cards template; the explicit rejection is that arrangement, not gradients or purple as such — the incumbent diya-purple hue survives as a supporting tone (night-sky glow, one Mission pillar accent, outline-button color) rather than the dominant identity. Every recurring UI motif earns its place by literally existing in a night market: string-light strands do the job a plain rule or divider would elsewhere; bulb-glow (not gray box-shadow) is the interactive/focus affordance; stall-card components carry a scalloped canvas-awning top exactly where a card would otherwise have a plain edge. The system is asymmetric and hand-set rather than gridded-and-centered — pillars and stall cards tilt, lift, and settle back on hover, matching a market stall rather than a SaaS dashboard.",
+    "keyCharacteristics": [
+      "Near-black ink-night ground with warm saffron/marigold light as the only source of \"glow\"",
+      "Bungee marquee display type reserved strictly for h1 — every page banner and 404 gets one hand-lettered marquee moment",
+      "Stall-card as the one recurring container shape, reused for sponsor tiers, vendor packages, and letters",
+      "String-lights and bunting strips as literal, animated (twinkling) section dividers, not abstract line rules",
+      "Asymmetric, tilted composition (rotated cards, staggered \"hanging\" pillars) in place of a centered grid"
+    ],
+    "rules": [
+      { "name": "The Glow-Not-Gray Rule", "body": "Every shadow in this system is a tinted light source (shadow-glow, shadow-bulb, shadow-lantern: all marigold/saffron rgba glows) or an ink-black diffuse drop (shadow-stall). Neutral gray box-shadow never appears; depth reads as light, not as material lift.", "section": "colors" },
+      { "name": "The Two-Surface Rule", "body": "Text is either saffron-tinted white on the ink-night ground, or ink-dark on a saffron-50 lit surface (stall-cards, price-tags, fields). No third neutral gray text/background pairing is used.", "section": "colors" },
+      { "name": "The One-Marquee Rule", "body": "Bungee is scoped to h1 only, globally, via the base stylesheet (h1 { @apply font-marquee }) rather than per-component classes — it is structurally impossible for a body paragraph or a card title to pick up the marquee face by accident.", "section": "typography" },
+      { "name": "The Lit-From-Within Rule", "body": "Elevation never uses a neutral gray shadow scale. An element is either glowing (warm, colored, used for anything interactive or featured) or sitting in ink-black shadow (used for static stall-cards at rest).", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reuse the stall-card as the single container for any tiered, packaged, or lettered content (sponsor tiers, vendor packages, outreach letters) rather than introducing a new card shape.",
+      "Do reserve the Bungee marquee face for h1 only, one per page.",
+      "Do tie all shadow/glow to the saffron/marigold hue family (or ink-black for resting stall-cards); never introduce a neutral gray shadow.",
+      "Do keep StringLights/BuntingStrip procedurally generated (SVG, no bulb/flag image assets) so hue and count stay tokenized and reduced-motion-safe.",
+      "Do keep the logo (/logo.jpg) exactly as shipped, wrapped only in the LanternGlow/ring treatment in Logo.tsx — the mark itself is fixed, not a placeholder."
+    ],
+    "donts": [
+      "Don't use the marquee (Bungee) face for body copy, card titles, or labels — it is an h1-only device, confirmed by the global h1 { @apply font-marquee } rule.",
+      "Don't introduce event photography; no photo library exists for this first-ever running of the festival, and the system is built to carry that absence gracefully through pattern, light, and typography instead.",
+      "Don't apply the stall-card--diya (purple awning) variant outside vendor-context cards — it is a deliberate sponsor/vendor color distinction, not a random alternate skin.",
+      "Don't treat the diya-purple family as the dominant brand hue going forward — it is the retained supporting/incumbent tone; saffron and marigold carry the identity now."
+    ]
+  }
+}

@@ -2,14 +2,13 @@ import { DiyaRow } from "../decorative";
 
 export default function Vision() {
   return (
-    <section id="vision" className="scroll-mt-20 bg-diya-50/60 py-20 sm:py-24">
+    <section id="vision" className="scroll-mt-20 border-y border-white/5 bg-black/20 py-20 sm:py-24">
       <div className="container-page grid items-center gap-14 lg:grid-cols-2">
         <div>
-          <span className="section-eyebrow">Our Vision</span>
-          <h2 className="mt-5 text-3xl font-bold text-diya-900 sm:text-4xl">
+          <h2 className="section-heading">
             A signature annual celebration that illuminates our region
           </h2>
-          <div className="mt-6 space-y-5 text-base leading-relaxed text-ink/70">
+          <div className="mt-6 space-y-5 text-base leading-relaxed text-saffron-50/65">
             <p>
               Our vision is to establish the Durham Diwali Festival as a
               signature annual celebration that illuminates our region with
@@ -33,9 +32,9 @@ export default function Vision() {
         </div>
 
         <div className="relative">
-          <div className="rounded-3xl bg-gradient-to-br from-diya-800 to-diya-950 p-10 text-white shadow-glow">
-            <DiyaRow className="h-8 w-full text-saffron-300" />
-            <blockquote className="mt-8 font-display text-xl font-medium leading-snug sm:text-2xl">
+          <div className="rounded-[2rem] bg-gradient-to-br from-diya-800 to-diya-950 p-10 text-white shadow-lantern">
+            <DiyaRow className="h-8 w-full text-marigold-300" />
+            <blockquote className="mt-8 font-display text-xl font-bold leading-snug sm:text-2xl">
               &ldquo;A beacon of hope, belonging, and celebration for
               generations to come.&rdquo;
             </blockquote>

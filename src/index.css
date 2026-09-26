@@ -2,45 +2,142 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-white text-ink font-body antialiased;
+  @apply bg-diya-950 font-body text-saffron-50/90 antialiased;
+  background-image: radial-gradient(ellipse 120% 60% at 50% -10%, rgba(255, 194, 51, 0.1), transparent 55%), linear-gradient(180deg, #1c0a2c 0%, #17081f 45%, #120616 100%);
+  background-attachment: fixed;
 }
 
-h1,
 h2,
 h3,
 h4 {
   @apply font-display;
 }
 
+/* Every h1 in this app is a marquee-sign moment: the hero, the page banners, 404 */
+h1 {
+  @apply font-marquee;
+  letter-spacing: 0.01em;
+}
+
 ::selection {
-  @apply bg-saffron-300 text-ink;
+  @apply bg-saffron-400 text-ink;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #17081f;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff9d32, #ce4805);
+  border-radius: 999px;
+  border: 3px solid #17081f;
+}
+
+::-moz-selection {
+  @apply bg-saffron-400 text-ink;
+}
+
+:focus-visible {
+  outline: 2px solid #ffc233;
+  outline-offset: 3px;
 }
 
 .container-page {
   @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
 }
 
-.section-eyebrow {
-  @apply inline-flex items-center gap-2 rounded-full bg-saffron-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-saffron-700;
+/* Stall card: the lit interior of a market stall against the night ground */
+.stall-card {
+  @apply relative rounded-[1.75rem] bg-saffron-50 text-ink shadow-stall;
+  padding-top: 1.75rem;
+}
+.stall-card::before,
+.stall-card-photo::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 14px;
+  transform: translateY(-1px);
+  background: repeating-linear-gradient(
+    90deg,
+    #ce4805 0 22px,
+    #ff9d32 22px 44px
+  );
+  -webkit-mask-image: radial-gradient(circle at 11px 0, transparent 10px, black 11px);
+  mask-image: radial-gradient(circle at 11px 0, transparent 10px, black 11px);
+  -webkit-mask-size: 22px 16px;
+  mask-size: 22px 16px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  border-radius: 1.75rem 1.75rem 0 0;
+  z-index: 1;
+}
+.stall-card--diya::before {
+  background: repeating-linear-gradient(90deg, #6d17a0 0 22px, #a238e8 22px 44px);
+}
+
+/* Photo-forward stall card: the awning strip lays across the top edge of the
+   picture itself instead of reserving padding above it. */
+.stall-card-photo {
+  @apply relative overflow-hidden rounded-[1.75rem] bg-saffron-50 text-ink shadow-stall;
+}
+
+.price-tag {
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+}
+
+.hanging-string {
+  position: relative;
+}
+.hanging-string::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 209, 102, 0.5) 12%, rgba(255, 209, 102, 0.5) 88%, transparent);
+}
+
+.section-heading {
+  @apply font-display text-3xl font-bold text-saffron-50 sm:text-4xl;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-saffron-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-saffron-500/25 transition duration-200 hover:bg-saffron-600 hover:shadow-saffron-600/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-saffron-500 active:scale-[0.98];
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-marigold-400 to-saffron-500 px-6 py-3 text-sm font-bold text-ink shadow-bulb transition duration-200 hover:brightness-105 hover:shadow-[0_0_0_3px_rgba(255,194,51,0.4),0_10px_28px_-4px_rgba(255,127,13,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marigold-400 active:scale-[0.98];
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition duration-200 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98];
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-saffron-300/50 bg-white/5 px-6 py-3 text-sm font-bold text-saffron-50 backdrop-blur transition duration-200 hover:border-saffron-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98];
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-diya-200 bg-white px-6 py-3 text-sm font-semibold text-diya-800 transition duration-200 hover:border-diya-400 hover:bg-diya-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-diya-500 active:scale-[0.98];
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-diya-700/30 bg-white px-6 py-3 text-sm font-bold text-diya-800 transition duration-200 hover:border-diya-700 hover:bg-diya-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-diya-600 active:scale-[0.98];
 }
 
 .field {
-  @apply w-full rounded-xl border border-diya-200 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/40 transition focus:border-saffron-500 focus:outline-none focus:ring-2 focus:ring-saffron-200;
+  @apply w-full rounded-xl border-2 border-diya-100 bg-white px-4 py-3 text-sm text-ink placeholder:text-[#635a6e] transition focus:border-saffron-500 focus:outline-none focus:ring-2 focus:ring-saffron-300;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

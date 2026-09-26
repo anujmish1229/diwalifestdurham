@@ -7,17 +7,19 @@ export default function SponsorshipPackages() {
   return (
     <>
       <PageHero
-        eyebrow="Partner With Us"
         title="Sponsorship Packages"
         description="Illuminate Durham Region's first-ever Diwali festival: six tiers of partnership designed to fit organizations of every size."
       />
 
       <section className="container-page py-20 sm:py-24">
-        <div className="mx-auto max-w-3xl rounded-3xl border border-diya-100 bg-diya-50/50 p-8 sm:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-saffron-600">
-            Letter to Potential Sponsors
-          </p>
-          <div className="mt-5 space-y-4 text-sm leading-relaxed text-ink/70">
+        <div className="stall-card mx-auto max-w-3xl p-8 sm:p-10">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-dashed border-saffron-200 pb-4">
+            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-saffron-600">
+              <Mail size={14} /> Letter to Potential Sponsors
+            </span>
+            <span className="text-xs font-semibold text-ink/70">October 2026 &middot; North Ajax</span>
+          </div>
+          <div className="mt-5 space-y-4 text-sm leading-relaxed text-ink/90">
             <p>Dear Community Partner,</p>
             <p>
               We are pleased to introduce the Durham Diwali Festival, a
@@ -83,38 +85,33 @@ export default function SponsorshipPackages() {
         </div>
 
         <div className="mx-auto mt-16 max-w-2xl text-center">
-          <span className="section-eyebrow">Sponsorship Packages</span>
-          <h2 className="mt-5 text-3xl font-bold text-diya-900 sm:text-4xl">
-            Choose your tier
-          </h2>
+          <h2 className="section-heading">Choose your tier</h2>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-x-6 gap-y-14 pt-6 md:grid-cols-2 lg:grid-cols-3">
           {sponsorshipTiers.map((tier) => (
             <div
               key={tier.id}
-              className={`relative flex flex-col rounded-2xl border p-7 ${
-                tier.featured
-                  ? "border-saffron-400 bg-gradient-to-b from-saffron-50 to-white shadow-lg shadow-saffron-500/10"
-                  : "border-diya-100 bg-white shadow-sm shadow-diya-900/5"
+              className={`stall-card relative flex flex-col p-7 ${
+                tier.featured ? "shadow-lantern ring-2 ring-marigold-400/60" : ""
               }`}
             >
               {tier.featured && (
-                <span className="absolute -top-3 left-7 rounded-full bg-saffron-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+                <span className="absolute -top-3.5 left-7 rounded-full bg-saffron-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow">
                   Top Tier
                 </span>
               )}
-              <h3 className="font-display text-xl font-bold text-diya-900">
+              <h3 className="font-display text-xl font-extrabold text-diya-900">
                 {tier.name}
               </h3>
-              <p className="text-xs font-semibold uppercase tracking-wide text-saffron-600">
+              <p className="text-xs font-bold uppercase tracking-wide text-saffron-600">
                 {tier.subtitle}
               </p>
               <p className="mt-4 font-display text-3xl font-extrabold text-diya-900">
                 {tier.price}
               </p>
-              <p className="mt-3 text-sm italic text-ink/50">{tier.tagline}</p>
-              <ul className="mt-6 flex-1 space-y-2.5 text-sm text-ink/70">
+              <p className="mt-3 text-sm italic text-ink/80">{tier.tagline}</p>
+              <ul className="mt-6 flex-1 space-y-2.5 text-sm text-ink/90">
                 {tier.benefits.map((b) => (
                   <li key={b} className="flex items-start gap-2.5">
                     <Check size={15} className="mt-0.5 shrink-0 text-saffron-500" />
@@ -132,12 +129,12 @@ export default function SponsorshipPackages() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl bg-diya-950 p-10 text-center text-white">
-          <Mail size={24} className="text-saffron-300" />
-          <h3 className="font-display text-xl font-semibold">
+        <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-white/10 bg-white/[0.04] p-10 text-center">
+          <Mail size={24} className="text-marigold-300" />
+          <h3 className="font-display text-xl font-bold text-saffron-50">
             Have questions about sponsorship?
           </h3>
-          <p className="max-w-md text-sm text-white/60">
+          <p className="max-w-md text-sm text-saffron-50/60">
             Reach out and a member of our organizing team will help you find
             the right fit for your organization.
           </p>

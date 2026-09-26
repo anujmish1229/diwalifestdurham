@@ -2,6 +2,12 @@ export interface TeamMember {
   name: string;
   role: string;
   bio?: string;
+  /**
+   * Optional explicit photo path/URL. When omitted, the team grid looks for
+   * /public/team/<slugified-name>.jpg (e.g. "Cecil Ramnauth" -> /team/cecil-ramnauth.jpg)
+   * and falls back to an initials tile if that file doesn't exist.
+   */
+  photo?: string;
 }
 
 export const team: TeamMember[] = [
@@ -22,18 +28,14 @@ export const team: TeamMember[] = [
   },
   {
     name: "Nidhi Mishra",
-    role: "Director",
+    role: "Community Outreach Director",
   },
   {
     name: "Dinesh Kumar",
-    role: "Director",
+    role: "Marketing Director",
   },
   {
-    name: "Nancy Henry",
-    role: "Advisor",
-  },
-  {
-    name: "Marilyn Crawford",
-    role: "Advisor",
+    name: "Priyank Lakhiya",
+    role: "Vendor Management Director",
   },
 ];

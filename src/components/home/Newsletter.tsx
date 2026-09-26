@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { CheckCircle2, Loader2, Mail } from "lucide-react";
 import { submitNetlifyForm } from "../../lib/netlifyForms";
-import { SparkleField } from "../decorative";
+import { StringLights } from "../decorative";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -24,21 +24,21 @@ export default function Newsletter() {
   return (
     <section
       id="newsletter"
-      className="scroll-mt-20 relative overflow-hidden bg-gradient-to-r from-diya-700 via-diya-800 to-diya-900 py-20 text-white"
+      className="scroll-mt-20 relative overflow-hidden bg-gradient-to-r from-diya-700 via-diya-800 to-diya-900 py-20"
     >
-      <SparkleField className="pointer-events-none absolute inset-x-0 top-0 h-40 w-full text-saffron-300/40" />
+      <StringLights className="pointer-events-none absolute inset-x-0 top-0 h-10 w-full text-marigold-300" count={18} height={32} />
 
       <div className="container-page relative text-center">
-        <h2 className="font-display text-3xl font-bold sm:text-4xl">
+        <h2 className="font-display text-3xl font-bold text-saffron-50 sm:text-4xl">
           Subscribe Now
         </h2>
-        <p className="mx-auto mt-3 max-w-md text-white/70">
+        <p className="mx-auto mt-3 max-w-md text-saffron-50/70">
           Be the first to hear about Durham Diwali Festival events, tickets,
           and community updates.
         </p>
 
         {status === "success" ? (
-          <div className="mx-auto mt-8 flex max-w-md items-center justify-center gap-2 rounded-full bg-white/10 px-6 py-4 text-sm font-medium text-saffron-200">
+          <div className="mx-auto mt-8 flex max-w-md items-center justify-center gap-2 rounded-full bg-white/10 px-6 py-4 text-sm font-medium text-marigold-200">
             <CheckCircle2 size={18} />
             You're subscribed! We'll keep you posted.
           </div>
@@ -68,7 +68,7 @@ export default function Newsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full rounded-full border-none bg-white py-3.5 pl-11 pr-4 text-sm text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-saffron-400"
+                className="w-full rounded-full border-none bg-white py-3.5 pl-11 pr-4 text-sm text-ink placeholder:text-[#635a6e] focus:outline-none focus:ring-2 focus:ring-saffron-400"
               />
             </div>
             <button
@@ -86,7 +86,7 @@ export default function Newsletter() {
         )}
 
         {status === "error" && (
-          <p className="mt-4 text-sm text-saffron-200">
+          <p className="mt-4 text-sm text-marigold-200">
             Something went wrong. Please try again in a moment.
           </p>
         )}

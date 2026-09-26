@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Mail } from "lucide-react";
 import Logo from "./Logo";
+import { BuntingStrip } from "./decorative";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-diya-950 text-white/80">
+    <footer className="border-t border-white/5 bg-[#170822] text-white/80">
+      <BuntingStrip className="h-8 w-full text-saffron-400/70" count={20} height={30} />
       <div className="container-page grid gap-10 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <Logo />

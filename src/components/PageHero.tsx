@@ -1,23 +1,22 @@
 import type { ReactNode } from "react";
-import { RangoliMotif } from "./decorative";
+import { RangoliMotif, StringLights } from "./decorative";
 
 interface PageHeroProps {
-  eyebrow: string;
   title: string;
   description: string;
   children?: ReactNode;
 }
 
-export default function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
+export default function PageHero({ title, description, children }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-diya-900 via-diya-800 to-diya-950 bg-diya-radial text-white">
-      <RangoliMotif className="pointer-events-none absolute -right-20 -top-20 h-96 w-96 text-white/10" />
-      <div className="container-page relative py-20 sm:py-24">
-        <span className="section-eyebrow bg-white/10 text-saffron-200">{eyebrow}</span>
-        <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-tight sm:text-5xl">
+    <section className="relative overflow-hidden bg-night-sky bg-stars">
+      <RangoliMotif className="pointer-events-none absolute -right-16 -top-10 h-80 w-80 text-white/5" />
+      <StringLights className="h-10 w-full text-saffron-300" count={18} height={40} />
+      <div className="container-page relative py-16 sm:py-20">
+        <h1 className="max-w-2xl font-marquee text-3xl leading-tight text-saffron-50 sm:text-4xl">
           {title}
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-saffron-50/70">
           {description}
         </p>
         {children}

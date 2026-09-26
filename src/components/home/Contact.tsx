@@ -44,27 +44,24 @@ export default function Contact() {
     <section id="contact" className="scroll-mt-20 py-20 sm:py-24">
       <div className="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <span className="section-eyebrow">Stay Connected</span>
-          <h2 className="mt-5 text-3xl font-bold text-diya-900 sm:text-4xl">
-            Get in touch
-          </h2>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-ink/60">
+          <h2 className="section-heading">Get in touch</h2>
+          <p className="mt-4 max-w-md text-base leading-relaxed text-saffron-50/60">
             Questions about sponsorships, vendor booths, volunteering, or the
             festival program? Send us a message and a member of the
             organizing team will get back to you.
           </p>
 
           <div className="mt-8 space-y-4">
-            <div className="flex items-center gap-3 text-sm text-ink/70">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-saffron-100 text-saffron-600">
+            <div className="flex items-center gap-3 text-sm font-medium text-saffron-50/70">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-marigold-300">
                 <Mail size={17} />
               </span>
-              <a href="mailto:info@durhamdiwalifestival.ca" className="hover:text-diya-800">
+              <a href="mailto:info@durhamdiwalifestival.ca" className="hover:text-marigold-300">
                 info@durhamdiwalifestival.ca
               </a>
             </div>
-            <div className="flex items-center gap-3 text-sm text-ink/70">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-saffron-100 text-saffron-600">
+            <div className="flex items-center gap-3 text-sm font-medium text-saffron-50/70">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-marigold-300">
                 <MapPin size={17} />
               </span>
               North Ajax, Durham Region, Ontario
@@ -72,14 +69,14 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-diya-100 bg-white p-8 shadow-sm shadow-diya-900/5 sm:p-10">
+        <div className="stall-card p-8 sm:p-10">
           {status === "success" ? (
             <div className="flex flex-col items-center justify-center gap-3 py-10 text-center">
               <CheckCircle2 size={40} className="text-saffron-500" />
-              <h3 className="font-display text-lg font-semibold text-diya-900">
+              <h3 className="font-display text-lg font-bold text-diya-900">
                 Message sent!
               </h3>
-              <p className="text-sm text-ink/60">
+              <p className="text-sm text-ink/85">
                 Thank you for reaching out. We'll be in touch soon.
               </p>
               <button
@@ -106,7 +103,7 @@ export default function Contact() {
               </p>
 
               <div className="sm:col-span-1">
-                <label htmlFor="firstName" className="mb-1.5 block text-xs font-semibold text-ink/60">
+                <label htmlFor="firstName" className="mb-1.5 block text-xs font-semibold text-ink/85">
                   First name*
                 </label>
                 <input
@@ -120,7 +117,7 @@ export default function Contact() {
               </div>
 
               <div className="sm:col-span-1">
-                <label htmlFor="lastName" className="mb-1.5 block text-xs font-semibold text-ink/60">
+                <label htmlFor="lastName" className="mb-1.5 block text-xs font-semibold text-ink/85">
                   Last name*
                 </label>
                 <input
@@ -134,7 +131,7 @@ export default function Contact() {
               </div>
 
               <div className="sm:col-span-1">
-                <label htmlFor="phone" className="mb-1.5 block text-xs font-semibold text-ink/60">
+                <label htmlFor="phone" className="mb-1.5 block text-xs font-semibold text-ink/85">
                   Phone*
                 </label>
                 <input
@@ -149,7 +146,7 @@ export default function Contact() {
               </div>
 
               <div className="sm:col-span-1">
-                <label htmlFor="email" className="mb-1.5 block text-xs font-semibold text-ink/60">
+                <label htmlFor="email" className="mb-1.5 block text-xs font-semibold text-ink/85">
                   Email*
                 </label>
                 <input
@@ -164,7 +161,7 @@ export default function Contact() {
               </div>
 
               <div className="sm:col-span-2">
-                <label htmlFor="message" className="mb-1.5 block text-xs font-semibold text-ink/60">
+                <label htmlFor="message" className="mb-1.5 block text-xs font-semibold text-ink/85">
                   Write a message*
                 </label>
                 <textarea
