@@ -33,6 +33,7 @@ export const team: TeamMember[] = [
   {
     name: "Dinesh Kumar",
     role: "Marketing Director",
+    bio: "Dinesh Kumar is currently the Chair of the Ajax-Pickering Board of Trade, a Board Member of the Ajax-Pickering Hospital Foundation, and a Founding Board Member of the Durham Tamil Association. Professionally, Dinesh serves as Vice President, Stakeholder Engagement at Computek College and 369 Global.",
   },
   {
     name: "Priyank Lakhiya",

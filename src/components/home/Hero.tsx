@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import { CalendarDays, MapPin, Award, Store, ArrowUpRight } from "lucide-react";
+import { CalendarDays, Clock, MapPin, Download } from "lucide-react";
 import { StringLights, BuntingStrip, RangoliMotif } from "../decorative";
+
+const FLYER_PDF = "/Durham%20Diwali%20-%20Event%20Flyer.pdf";
 
 export default function Hero() {
   return (
@@ -37,17 +39,20 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-saffron-50/70">
-            Join us in October 2026 for a night market of music, dance, food,
-            and community &mdash; the first Festival of Lights this region has
-            ever hosted.
+            Join us for a free community celebration with a spectacular drone
+            show, food, and culture &mdash; the first Festival of Lights this
+            region has ever hosted.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-5 text-sm font-semibold text-saffron-50/70">
             <span className="inline-flex items-center gap-2">
-              <CalendarDays size={16} className="text-marigold-300" /> October 2026
+              <CalendarDays size={16} className="text-marigold-300" /> Saturday, October 24, 2026
             </span>
             <span className="inline-flex items-center gap-2">
-              <MapPin size={16} className="text-marigold-300" /> North Ajax, Durham Region
+              <Clock size={16} className="text-marigold-300" /> 5:30 PM &ndash; 8:30 PM
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <MapPin size={16} className="text-marigold-300" /> J. Clarke Richardson / Notre Dame HS grounds &amp; adjacent Sun City development lands, Ajax
             </span>
           </div>
 
@@ -61,43 +66,33 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-sm flex-col gap-5 sm:max-w-md lg:mx-0">
-          <Link
-            to="/sponsorship-packages"
-            className="stall-card group flex -rotate-1 items-start gap-4 px-6 pb-6 pt-8 transition hover:-translate-y-1 hover:rotate-0"
+        {/* The flyer, pinned up like a poster on the stall wall. */}
+        <figure className="relative mx-auto w-full max-w-[18rem] sm:max-w-xs lg:mx-0 lg:justify-self-end">
+          <a
+            href={FLYER_PDF}
+            target="_blank"
+            rel="noopener"
+            aria-label="Open the event flyer (PDF)"
+            className="group block rotate-2 transition duration-300 hover:rotate-0 hover:-translate-y-1 motion-reduce:transition-none"
           >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-saffron-100 text-saffron-600">
-              <Award size={20} />
-            </span>
-            <span className="flex-1">
-              <span className="flex items-center justify-between font-display text-base font-bold text-diya-900">
-                Become a Sponsor
-                <ArrowUpRight size={16} className="text-diya-400 transition group-hover:text-saffron-600" />
-              </span>
-              <span className="mt-1 block text-sm leading-relaxed text-ink/85">
-                Six tiers, from Community Friend to Presenting Sponsor.
-              </span>
-            </span>
-          </Link>
-
-          <Link
-            to="/vendor-packages"
-            className="stall-card stall-card--diya group flex rotate-1 items-start gap-4 px-6 pb-6 pt-8 transition hover:-translate-y-1 hover:rotate-0 sm:self-end sm:w-[92%]"
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-diya-100 text-diya-700">
-              <Store size={20} />
-            </span>
-            <span className="flex-1">
-              <span className="flex items-center justify-between font-display text-base font-bold text-diya-900">
-                Apply as a Vendor
-                <ArrowUpRight size={16} className="text-diya-400 transition group-hover:text-diya-700" />
-              </span>
-              <span className="mt-1 block text-sm leading-relaxed text-ink/85">
-                Food, marketplace, and cultural vendor booths available.
-              </span>
-            </span>
-          </Link>
-        </div>
+            <img
+              src="/flyer.jpg"
+              alt="Durham Diwali Festival flyer: Saturday, October 24, 5:30 PM to 8:30 PM at J. Clarke Richardson / Notre Dame HS grounds and adjacent Sun City development lands, Ajax. Spectacular drone show, food, culture. Free community celebration."
+              width={787}
+              height={1400}
+              className="w-full rounded-2xl shadow-lantern ring-1 ring-marigold-400/30"
+            />
+          </a>
+          <figcaption className="mt-5 flex justify-center">
+            <a
+              href={FLYER_PDF}
+              download="Durham Diwali Festival Flyer.pdf"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-marigold-400 transition hover:text-saffron-200"
+            >
+              <Download size={14} aria-hidden="true" /> Download the flyer
+            </a>
+          </figcaption>
+        </figure>
       </div>
 
       <div className="relative border-t border-white/10 bg-black/25 pt-2">
@@ -107,7 +102,7 @@ export default function Hero() {
           <span>Dance</span>
           <span>Food</span>
           <span>Marketplace</span>
-          <span>Fireworks &amp; Light Show</span>
+          <span>Drone Show</span>
         </div>
       </div>
     </section>
