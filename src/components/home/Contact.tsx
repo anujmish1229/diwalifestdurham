@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { CheckCircle2, Loader2, Mail, MapPin } from "lucide-react";
+import { CheckCircle2, Loader2, Mail, MapPin, Phone } from "lucide-react";
 import { submitNetlifyForm } from "../../lib/netlifyForms";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -59,6 +59,11 @@ export default function Contact() {
               <a href="mailto:info@durhamdiwalifestival.ca" className="hover:text-marigold-300">
                 info@durhamdiwalifestival.ca
               </a>
+            </div><div className="flex items-center gap-3 text-sm font-medium text-saffron-50/70">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-marigold-300">
+                <Phone size={17} />
+              </span>
+                +1 (905) 429-1752
             </div>
             <div className="flex items-center gap-3 text-sm font-medium text-saffron-50/70">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-marigold-300">
