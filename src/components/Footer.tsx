@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import { Facebook, Instagram, Mail } from "lucide-react";
+import { Link } from "react-router";
+import { Mail } from "lucide-react";
+import { FacebookIcon, InstagramIcon } from "./icons/BrandIcons";
 import Logo from "./Logo";
 import { BuntingStrip } from "./decorative";
 
@@ -23,14 +24,14 @@ export default function Footer() {
               aria-label="Facebook"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-saffron-500"
             >
-              <Facebook size={16} />
+              <FacebookIcon size={16} />
             </a>
             <a
               href="#"
               aria-label="Instagram"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-saffron-500"
             >
-              <Instagram size={16} />
+              <InstagramIcon size={16} />
             </a>
             <a
               href="mailto:info@durhamdiwalifestival.ca"

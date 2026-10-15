@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Award, ArrowRight } from "lucide-react";
 import { sponsorshipTiers } from "../../data/sponsorshipTiers";
 import { BuntingStrip } from "../decorative";

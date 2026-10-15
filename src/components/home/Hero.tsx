@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { CalendarDays, Clock, MapPin, Download } from "lucide-react";
 import { StringLights, BuntingStrip, RangoliMotif } from "../decorative";
 

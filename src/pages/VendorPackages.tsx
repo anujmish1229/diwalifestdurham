@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Check, Clock, Mail } from "lucide-react";
 import PageHero from "../components/PageHero";
 import { vendorEvents } from "../data/vendorPackages";
