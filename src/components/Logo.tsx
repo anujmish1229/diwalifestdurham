@@ -9,7 +9,7 @@ export default function Logo({ className = "", glow = true }: LogoProps) {
       {glow && (
         <span
           aria-hidden="true"
-          className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-marigold-400/60 to-saffron-500/40 blur-md"
+          className="absolute -inset-1.5 rounded-full bg-linear-to-br from-marigold-400/60 to-saffron-500/40 blur-md"
         />
       )}
       <img

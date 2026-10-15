@@ -1,6 +1,148 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-diya-50: #fdf5ff;
+  --color-diya-100: #f6e6ff;
+  --color-diya-200: #e9c8ff;
+  --color-diya-300: #d69bff;
+  --color-diya-400: #bd63fb;
+  --color-diya-500: #a238e8;
+  --color-diya-600: #8a1fc9;
+  --color-diya-700: #6d17a0;
+  --color-diya-800: #4c1170;
+  --color-diya-900: #33094e;
+  --color-diya-950: #210536;
+
+  --color-saffron-50: #fff8ed;
+  --color-saffron-100: #ffefd3;
+  --color-saffron-200: #ffdba5;
+  --color-saffron-300: #ffc06d;
+  --color-saffron-400: #ff9d32;
+  --color-saffron-500: #ff7f0d;
+  --color-saffron-600: #f96204;
+  --color-saffron-700: #ce4805;
+  --color-saffron-800: #a3390d;
+  --color-saffron-900: #84300e;
+  --color-saffron-950: #471604;
+
+  --color-marigold-400: #ffd166;
+  --color-marigold-500: #ffc233;
+  --color-marigold-600: #f2a900;
+
+  --color-ink: #1a1023;
+
+  --font-display: 'Baloo 2', system-ui, sans-serif;
+  --font-marquee: 'Bungee', 'Baloo 2', system-ui, sans-serif;
+  --font-body: 'Mukta', system-ui, sans-serif;
+
+  --background-image-diya-radial:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 194, 51, 0.25),
+      transparent 45%
+    ),
+    radial-gradient(circle at 80% 0%, rgba(255, 127, 13, 0.2), transparent 40%);
+  --background-image-night-sky:
+    radial-gradient(
+      circle at 18% 8%,
+      rgba(255, 194, 51, 0.16),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 82% 0%,
+      rgba(255, 127, 13, 0.14),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(162, 56, 232, 0.18),
+      transparent 55%
+    );
+  --background-image-stars:
+    radial-gradient(
+      1.5px 1.5px at 10% 20%,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    radial-gradient(1px 1px at 30% 65%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(
+      1.5px 1.5px at 55% 15%,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    ),
+    radial-gradient(1px 1px at 72% 45%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(
+      1.5px 1.5px at 88% 70%,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    ),
+    radial-gradient(1px 1px at 95% 25%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 20% 85%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(
+      1.5px 1.5px at 42% 92%,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+
+  --shadow-glow: 0 0 40px rgba(255, 194, 51, 0.35);
+  --shadow-bulb:
+    0 0 0 3px rgba(255, 194, 51, 0.28), 0 8px 24px -4px rgba(255, 127, 13, 0.45);
+  --shadow-lantern:
+    0 0 32px 6px rgba(255, 194, 51, 0.35), 0 0 64px 16px rgba(162, 56, 232, 0.2);
+  --shadow-stall: 0 20px 45px -20px rgba(8, 2, 16, 0.6);
+
+  --animate-twinkle: twinkle 2.6s ease-in-out infinite;
+  --animate-sway: sway 6s ease-in-out infinite;
+  --animate-drift: drift 5s ease-in-out infinite;
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: scale(0.92);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+  }
+  @keyframes sway {
+    0%,
+    100% {
+      transform: rotate(-1.2deg);
+    }
+    50% {
+      transform: rotate(1.2deg);
+    }
+  }
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
   color-scheme: dark;
@@ -116,19 +258,19 @@ h1 {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-marigold-400 to-saffron-500 px-6 py-3 text-sm font-bold text-ink shadow-bulb transition duration-200 hover:brightness-105 hover:shadow-[0_0_0_3px_rgba(255,194,51,0.4),0_10px_28px_-4px_rgba(255,127,13,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marigold-400 active:scale-[0.98];
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-b from-marigold-400 to-saffron-500 px-6 py-3 text-sm font-bold text-ink shadow-bulb transition duration-200 hover:brightness-105 hover:shadow-[0_0_0_3px_rgba(255,194,51,0.4),0_10px_28px_-4px_rgba(255,127,13,0.55)] focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marigold-400 active:scale-[0.98];
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-saffron-300/50 bg-white/5 px-6 py-3 text-sm font-bold text-saffron-50 backdrop-blur transition duration-200 hover:border-saffron-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98];
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-saffron-300/50 bg-white/5 px-6 py-3 text-sm font-bold text-saffron-50 backdrop-blur-sm transition duration-200 hover:border-saffron-300 hover:bg-white/10 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98];
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-diya-700/30 bg-white px-6 py-3 text-sm font-bold text-diya-800 transition duration-200 hover:border-diya-700 hover:bg-diya-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-diya-600 active:scale-[0.98];
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-diya-700/30 bg-white px-6 py-3 text-sm font-bold text-diya-800 transition duration-200 hover:border-diya-700 hover:bg-diya-50 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-diya-600 active:scale-[0.98];
 }
 
 .field {
-  @apply w-full rounded-xl border-2 border-diya-100 bg-white px-4 py-3 text-sm text-ink placeholder:text-[#635a6e] transition focus:border-saffron-500 focus:outline-none focus:ring-2 focus:ring-saffron-300;
+  @apply w-full rounded-xl border-2 border-diya-100 bg-white px-4 py-3 text-sm text-ink placeholder:text-[#635a6e] transition focus:border-saffron-500 focus:outline-hidden focus:ring-2 focus:ring-saffron-300;
 }
 
 @media (prefers-reduced-motion: reduce) {

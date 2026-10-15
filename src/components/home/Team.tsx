@@ -32,7 +32,7 @@ function TeamPhoto({ member, palette }: { member: TeamMember; palette: string })
   if (failed) {
     return (
       <div
-        className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${palette} font-display text-4xl font-bold text-white/90`}
+        className={`flex h-full w-full items-center justify-center bg-linear-to-br ${palette} font-display text-4xl font-bold text-white/90`}
         role="img"
         aria-label={member.name}
       >
@@ -74,14 +74,14 @@ function TeamCard({
           onClick={onOpen}
           aria-expanded={isOpen}
           aria-label={`Read ${member.name}'s bio`}
-          className="group aspect-[4/5] w-full overflow-hidden bg-diya-100"
+          className="group aspect-4/5 w-full overflow-hidden bg-diya-100"
         >
           <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none">
             <TeamPhoto member={member} palette={palette} />
           </div>
         </button>
       ) : (
-        <div className="aspect-[4/5] w-full bg-diya-100">
+        <div className="aspect-4/5 w-full bg-diya-100">
           <TeamPhoto member={member} palette={palette} />
         </div>
       )}

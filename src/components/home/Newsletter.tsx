@@ -24,7 +24,7 @@ export default function Newsletter() {
   return (
     <section
       id="newsletter"
-      className="scroll-mt-20 relative overflow-hidden bg-gradient-to-r from-diya-700 via-diya-800 to-diya-900 py-20"
+      className="scroll-mt-20 relative overflow-hidden bg-linear-to-r from-diya-700 via-diya-800 to-diya-900 py-20"
     >
       <StringLights className="pointer-events-none absolute inset-x-0 top-0 h-10 w-full text-marigold-300" count={18} height={32} />
 
@@ -68,7 +68,7 @@ export default function Newsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full rounded-full border-none bg-white py-3.5 pl-11 pr-4 text-sm text-ink placeholder:text-[#635a6e] focus:outline-none focus:ring-2 focus:ring-saffron-400"
+                className="w-full rounded-full border-none bg-white py-3.5 pl-11 pr-4 text-sm text-ink placeholder:text-[#635a6e] focus:outline-hidden focus:ring-2 focus:ring-saffron-400"
               />
             </div>
             <button

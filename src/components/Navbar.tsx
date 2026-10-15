@@ -75,7 +75,7 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#170822]/95 shadow-lg shadow-black/30 backdrop-blur" : "bg-[#170822]/70 backdrop-blur"
+        scrolled ? "bg-[#170822]/95 shadow-lg shadow-black/30 backdrop-blur-sm" : "bg-[#170822]/70 backdrop-blur-sm"
       }`}
     >
       <div className="container-page flex h-20 items-center justify-between">

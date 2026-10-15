@@ -32,7 +32,7 @@ export default function Vision() {
         </div>
 
         <div className="relative">
-          <div className="rounded-[2rem] bg-gradient-to-br from-diya-800 to-diya-950 p-10 text-white shadow-lantern">
+          <div className="rounded-4xl bg-linear-to-br from-diya-800 to-diya-950 p-10 text-white shadow-lantern">
             <DiyaRow className="h-8 w-full text-marigold-300" />
             <blockquote className="mt-8 font-display text-xl font-bold leading-snug sm:text-2xl">
               &ldquo;A beacon of hope, belonging, and celebration for

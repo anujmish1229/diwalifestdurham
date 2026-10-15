@@ -80,7 +80,7 @@ export default function VendorPackages() {
                     }`}
                   >
                     {pkg.featured && (
-                      <span className="absolute -top-3.5 left-6 rounded-full bg-saffron-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow">
+                      <span className="absolute -top-3.5 left-6 rounded-full bg-saffron-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
                         Most Popular
                       </span>
                     )}
@@ -111,7 +111,7 @@ export default function VendorPackages() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-white/10 bg-white/[0.04] p-10 text-center">
+        <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-white/10 bg-white/4 p-10 text-center">
           <Mail size={24} className="text-marigold-300" />
           <h3 className="font-display text-xl font-bold text-saffron-50">
             Ready to apply as a vendor?
