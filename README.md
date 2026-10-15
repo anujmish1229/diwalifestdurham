@@ -30,10 +30,10 @@ I designed and built the website for the organizing committee: visual design bui
 
 | Layer      | Choice                                   |
 | ---------- | ---------------------------------------- |
-| Framework  | React 18 + TypeScript                    |
-| Build tool | Vite 5                                   |
-| Routing    | React Router 6                           |
-| Styling    | Tailwind CSS 3, custom design tokens     |
+| Framework  | React 19 + TypeScript                    |
+| Build tool | Vite 8                                   |
+| Routing    | React Router 7                           |
+| Styling    | Tailwind CSS 4, custom design tokens     |
 | Icons      | lucide-react                             |
 | Forms      | Netlify Forms                            |
 | Hosting    | Netlify (auto-deploys from `main`)       |
@@ -66,7 +66,7 @@ src/
 
 ## Local setup
 
-Requires Node.js 20 (see `.nvmrc`) and npm.
+Requires Node.js 20.19+ or 22.12+ (see `.nvmrc`) and npm.
 
 ```bash
 git clone https://github.com/anujmish1229/diwalifestdurham.git
@@ -78,7 +78,8 @@ npm run dev        # http://localhost:5173
 | Script            | What it does                                  |
 | ----------------- | --------------------------------------------- |
 | `npm run dev`     | Vite dev server                               |
-| `npm run build`   | Type-check (`tsc -b`) and build into `dist/`  |
+| `npm run build`   | Build into `dist/`                            |
+| `npm run typecheck` | TypeScript project build check (`tsc -b`)   |
 | `npm run preview` | Serve the production build                    |
 | `npm run lint`    | ESLint                                        |
 
