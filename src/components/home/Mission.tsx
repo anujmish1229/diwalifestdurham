@@ -35,7 +35,7 @@ export default function Mission() {
     <section className="container-page py-20 sm:py-24">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="section-heading">Our Mission</h2>
-        <p className="mt-6 text-xl leading-relaxed text-saffron-50/75 sm:text-2xl">
+        <p className="mt-6 text-xl leading-relaxed text-saffron-50/75 sm:text-2xl sm:leading-8">
           The Durham Diwali Festival is committed to creating an inclusive,
           community-centered celebration that brings the Festival of Lights
           to Ajax for the first time in 2026. Our mission is to honour the

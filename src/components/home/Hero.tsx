@@ -16,7 +16,7 @@ export default function Hero() {
 
       <div className="container-page relative grid gap-14 pb-20 pt-6 sm:pb-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10 lg:pt-10">
         <div className="max-w-2xl">
-          <h1 className="font-marquee text-3xl leading-tight text-saffron-50 sm:text-4xl lg:text-[2.65rem]">
+          <h1 className="font-marquee text-3xl leading-tight text-saffron-50 sm:text-4xl sm:leading-10 lg:text-[2.65rem]">
             Ajax&rsquo;s first-ever{" "}
             <span className="relative inline-block text-marigold-300">
               Diwali
