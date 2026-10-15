@@ -45,6 +45,8 @@ function TeamPhoto({ member, palette }: { member: TeamMember; palette: string })
     <img
       src={src}
       alt={member.name}
+      loading="lazy"
+      decoding="async"
       onError={() => setFailed(true)}
       className="h-full w-full object-cover"
     />
