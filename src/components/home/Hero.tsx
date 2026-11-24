@@ -64,30 +64,37 @@ export default function Hero() {
               Become a Sponsor
             </Link>
           </div>
+
+          <p className="mt-6 text-sm text-saffron-50/60">
+            Presented by the{" "}
+            <a
+              href="https://hccd.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-marigold-300 underline decoration-marigold-300/40 underline-offset-4 transition hover:text-saffron-200"
+            >
+              Hindu Community Centre of Durham (HCCD) ↗
+            </a>
+          </p>
         </div>
 
-        {/* The flyer, pinned up like a poster on the stall wall. */}
-        <figure className="relative mx-auto w-full max-w-[18rem] sm:max-w-xs lg:mx-0 lg:justify-self-end">
-          <a
-            href={FLYER_PDF}
-            target="_blank"
-            rel="noopener"
-            aria-label="Open the event flyer (PDF)"
-            className="group block rotate-2 transition duration-300 hover:rotate-0 hover:-translate-y-1 motion-reduce:transition-none"
-          >
+        {/* A moment from the festival night, framed like a photo on the stall wall. */}
+        <figure className="relative mx-auto w-full max-w-xl lg:mx-0 lg:justify-self-end">
+          <div className="rotate-1 transition duration-300 hover:rotate-0 hover:-translate-y-1 motion-reduce:transition-none">
             <img
-              src="/flyer.jpg"
-              alt="Durham Diwali Festival flyer: Saturday, October 24, 5:30 PM to 8:30 PM at J. Clarke Richardson / Notre Dame HS grounds and adjacent Sun City development lands, Ajax. Spectacular drone show, food, culture. Free community celebration."
-              width={787}
-              height={1400}
-              className="w-full rounded-2xl shadow-lantern ring-1 ring-marigold-400/30"
+              src="/hero-event.jpg"
+              alt="Community leaders, elected officials and police representatives on stage at the Durham Diwali Festival, October 24, 2026"
+              width={1600}
+              height={1067}
+              className="aspect-[3/2] w-full rounded-2xl object-cover shadow-lantern ring-1 ring-marigold-400/30"
             />
-          </a>
-          <figcaption className="mt-5 flex justify-center">
+          </div>
+          <figcaption className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wide text-marigold-400">
+            <span className="text-saffron-50/60">Festival night &middot; October 24, 2026</span>
             <a
               href={FLYER_PDF}
               download="Durham Diwali Festival Flyer.pdf"
-              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-marigold-400 transition hover:text-saffron-200"
+              className="inline-flex items-center gap-2 transition hover:text-saffron-200"
             >
               <Download size={14} aria-hidden="true" /> Download the flyer
             </a>
