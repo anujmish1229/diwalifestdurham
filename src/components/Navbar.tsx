@@ -11,6 +11,8 @@ const sectionLinks = [
   { label: "Contact", hash: "contact" },
 ];
 
+const HCCD_SITE = "https://hccd.ca/";
+
 const pageLinks = [
   { label: "Sponsorship Packages", to: "/sponsorship-packages" },
   { label: "Vendor Packages", to: "/vendor-packages" },
@@ -83,11 +85,11 @@ export default function Navbar() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 xl:flex">
           <Link
             to="/"
             aria-current={homeActive ? "page" : undefined}
-            className={`relative rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-marigold-300 ${
+            className={`relative whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-marigold-300 ${
               homeActive ? "text-marigold-300" : "text-saffron-50/80"
             }`}
           >
@@ -101,7 +103,7 @@ export default function Navbar() {
                 key={link.hash}
                 to={`/#${link.hash}`}
                 aria-current={active ? "page" : undefined}
-                className={`relative rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-marigold-300 ${
+                className={`relative whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-marigold-300 ${
                   active ? "text-marigold-300" : "text-saffron-50/80"
                 }`}
               >
@@ -117,7 +119,7 @@ export default function Navbar() {
                 key={link.to}
                 to={link.to}
                 aria-current={active ? "page" : undefined}
-                className={`relative rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-marigold-300 ${
+                className={`relative whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-marigold-300 ${
                   active ? "text-marigold-300" : "text-saffron-50/80"
                 }`}
               >
@@ -126,9 +128,17 @@ export default function Navbar() {
               </Link>
             );
           })}
+          <a
+            href={HCCD_SITE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative rounded-full px-3 py-2 text-sm font-semibold text-saffron-50/80 transition hover:bg-white/5 hover:text-marigold-300"
+          >
+            HCCD ↗
+          </a>
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Link to="/#newsletter" className="btn-primary">
             Get Event Updates
           </Link>
@@ -136,7 +146,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg p-2 text-saffron-100 lg:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-saffron-100 xl:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -152,7 +162,7 @@ export default function Navbar() {
       />
 
       {open && (
-        <div className="border-t border-white/10 bg-[#170822] lg:hidden">
+        <div className="border-t border-white/10 bg-[#170822] xl:hidden">
           <nav className="container-page flex flex-col gap-1 py-4">
             <Link to="/" className="rounded-lg px-3 py-2.5 text-sm font-semibold text-saffron-50/90 hover:bg-white/5">
               Home
@@ -175,6 +185,14 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={HCCD_SITE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg px-3 py-2.5 text-sm font-semibold text-saffron-50/90 hover:bg-white/5"
+            >
+              HCCD ↗
+            </a>
             <Link to="/#newsletter" className="btn-primary mt-2 w-full">
               Get Event Updates
             </Link>

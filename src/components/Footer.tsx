@@ -74,6 +74,14 @@ export default function Footer() {
             with the Durham District School Board.
           </p>
           <p className="mt-3 text-sm text-white/60">North Ajax, Durham Region · October 2026</p>
+          <a
+            href="https://hccd.ca/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-sm font-semibold text-marigold-300 transition hover:text-saffron-300"
+          >
+            Hindu Community Centre of Durham (HCCD) ↗
+          </a>
         </div>
       </div>
 
