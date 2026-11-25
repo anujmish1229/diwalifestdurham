@@ -88,7 +88,20 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 sm:flex-row">
           <p>&copy; {year} Durham Diwali Festival. All rights reserved.</p>
-          <p>Made with light, colour, and community.</p>
+          <p>
+            Made with light, colour, and community.
+            <span className="text-white/30">
+              {" · "}
+              <a
+                href="https://anujmishra.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white/60 transition-colors"
+              >
+                Site by Anuj Mishra
+              </a>
+            </span>
+          </p>
         </div>
       </div>
     </footer>
