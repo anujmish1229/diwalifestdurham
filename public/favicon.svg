@@ -1,16 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#f96204"/>
-      <stop offset="100%" stop-color="#ffd166"/>
+    <linearGradient id="ddf-flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6aa6"/>
+      <stop offset="0.5" stop-color="#ffc233"/>
+      <stop offset="1" stop-color="#ff7f0d"/>
     </linearGradient>
-    <linearGradient id="bowl" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#bd63fb"/>
-      <stop offset="100%" stop-color="#6d17a0"/>
+    <linearGradient id="ddf-bowl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9d32"/>
+      <stop offset="1" stop-color="#ce4805"/>
     </linearGradient>
+    <radialGradient id="ddf-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffc233" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ffc233" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <ellipse cx="32" cy="46" rx="22" ry="9" fill="url(#bowl)"/>
-  <path d="M10 46 C10 40 20 38 32 38 C44 38 54 40 54 46" fill="none" stroke="#33094e" stroke-width="1.5" opacity="0.4"/>
-  <path d="M32 14 C25 24 25 30 32 34 C39 30 39 24 32 14 Z" fill="url(#flame)"/>
-  <path d="M32 20 C29 25 29 28 32 30 C35 28 35 25 32 20 Z" fill="#fff3d6"/>
+  <circle cx="32" cy="25" r="19" fill="url(#ddf-glow)"/>
+  <circle cx="19" cy="8.5" r="2.2" fill="#ff6aa6"/>
+  <circle cx="32" cy="4" r="2.2" fill="#ffd166"/>
+  <circle cx="45" cy="8.5" r="2.2" fill="#ff6aa6"/>
+  <path d="M32 9.5c6.8 8.6 11 14.6 11 21.6 0 6.4-4.9 11.4-11 11.4s-11-5-11-11.4c0-7 4.2-13 11-21.6z" fill="url(#ddf-flame)"/>
+  <path d="M32 23.5c3 4.1 4.8 6.9 4.8 9.8 0 3-2.2 5-4.8 5s-4.8-2-4.8-5c0-2.9 1.8-5.7 4.8-9.8z" fill="#fff8ed"/>
+  <path d="M10 41.5h42.5c1.8 0 3.5-.6 4.5-1.8-.3 2.7-1.7 4.8-3.8 5.9C50.6 51.4 42.3 56 32 56c-11.2 0-19.8-5.8-22-14.5z" fill="url(#ddf-bowl)"/>
+  <ellipse cx="31.5" cy="41.6" rx="21.5" ry="2.4" fill="#ffd166"/>
 </svg>

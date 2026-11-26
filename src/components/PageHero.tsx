@@ -1,24 +1,34 @@
 import type { ReactNode } from "react";
-import { RangoliMotif, StringLights } from "./decorative";
 
 interface PageHeroProps {
   title: string;
   description: string;
+  image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
   children?: ReactNode;
 }
 
-export default function PageHero({ title, description, children }: PageHeroProps) {
+/** Inner-page header: a photo across the full width with the title set over it, poster style. */
+export default function PageHero({ title, description, image, imageAlt = "", imagePosition = "center", children }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-night-sky bg-stars">
-      <RangoliMotif className="pointer-events-none absolute -right-16 -top-10 h-80 w-80 text-white/5" />
-      <StringLights className="h-10 w-full text-saffron-300" count={18} height={40} />
-      <div className="container-page relative py-16 sm:py-20">
-        <h1 className="max-w-2xl font-marquee text-3xl leading-tight text-saffron-50 sm:text-4xl">
+    <section className="relative isolate overflow-hidden">
+      {image && (
+        <>
+          <img
+            src={image}
+            alt={imageAlt}
+            className="absolute inset-0 -z-10 h-full w-full object-cover"
+            style={{ objectPosition: imagePosition }}
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/75 to-transparent" aria-hidden="true" />
+        </>
+      )}
+      <div className="container-page pb-16 pt-28 sm:pb-20 sm:pt-36">
+        <h1 className="max-w-4xl font-display text-[clamp(3rem,8vw,7rem)] font-extrabold leading-[0.88] tracking-[-0.04em]">
           {title}
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-saffron-50/70">
-          {description}
-        </p>
+        <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/80">{description}</p>
         {children}
       </div>
     </section>

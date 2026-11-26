@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
-import { CheckCircle2, Loader2, Mail, MapPin, Phone } from "lucide-react";
+import { Loader2 } from "lucide-react";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "../../data/festival";
 import { submitNetlifyForm } from "../../lib/netlifyForms";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -41,44 +42,41 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="scroll-mt-20 py-20 sm:py-24">
-      <div className="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <h2 className="section-heading">Get in touch</h2>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-saffron-50/60">
-            Questions about sponsorships, vendor booths, volunteering, or the
-            festival program? Send us a message and a member of the
-            organizing team will get back to you.
+    <section id="contact" className="scroll-mt-20">
+      <div className="container-page grid gap-12 py-20 sm:py-24 lg:grid-cols-12">
+        <div className="lg:col-span-5">
+          <h2 className="section-heading">
+            Say <span className="text-rani-light">hello.</span>
+          </h2>
+          <p className="mt-5 max-w-md leading-relaxed text-cream/70">
+            Questions about sponsorships, vendor booths, volunteering, or the festival program? Send us a message
+            and a member of the organizing team will get back to you.
           </p>
 
-          <div className="mt-8 space-y-4">
-            <div className="flex items-center gap-3 text-sm font-medium text-saffron-50/70">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-marigold-300">
-                <Mail size={17} />
-              </span>
-              <a href="mailto:info@durhamdiwalifestival.ca" className="hover:text-marigold-300">
-                info@durhamdiwalifestival.ca
-              </a>
-            </div><div className="flex items-center gap-3 text-sm font-medium text-saffron-50/70">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-marigold-300">
-                <Phone size={17} />
-              </span>
-                +1 (905) 429-1752
+          <dl className="mt-10 border-t border-cream/15">
+            <div className="border-b border-cream/15 py-4">
+              <dt className="text-xs font-bold text-rani-light">Email</dt>
+              <dd className="mt-1">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="font-display text-xl font-bold hover:text-marigold-400">
+                  {CONTACT_EMAIL}
+                </a>
+              </dd>
             </div>
-            <div className="flex items-center gap-3 text-sm font-medium text-saffron-50/70">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-marigold-300">
-                <MapPin size={17} />
-              </span>
-              North Ajax, Durham Region, Ontario
+            <div className="border-b border-cream/15 py-4">
+              <dt className="text-xs font-bold text-rani-light">Phone</dt>
+              <dd className="mt-1 font-display text-xl font-bold">{CONTACT_PHONE}</dd>
             </div>
-          </div>
+            <div className="border-b border-cream/15 py-4">
+              <dt className="text-xs font-bold text-rani-light">Where</dt>
+              <dd className="mt-1 font-display text-xl font-bold">North Ajax, Durham Region, Ontario</dd>
+            </div>
+          </dl>
         </div>
 
-        <div className="stall-card p-8 sm:p-10">
+        <div className="rounded-3xl bg-cream p-8 text-ink sm:p-10 lg:col-span-7">
           {status === "success" ? (
             <div className="flex flex-col items-center justify-center gap-3 py-10 text-center">
-              <CheckCircle2 size={40} className="text-saffron-500" />
-              <h3 className="font-display text-lg font-bold text-diya-900">
+              <h3 className="font-display text-3xl font-extrabold text-night">
                 Message sent!
               </h3>
               <p className="text-sm text-ink/85">
@@ -184,7 +182,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="btn-primary w-full disabled:opacity-70 sm:w-auto"
+                  className="btn-rani w-full disabled:opacity-70 sm:w-auto"
                 >
                   {status === "submitting" ? (
                     <Loader2 size={16} className="animate-spin" />

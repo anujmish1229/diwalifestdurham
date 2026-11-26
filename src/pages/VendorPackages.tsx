@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, Clock, Mail } from "lucide-react";
+import { Check } from "lucide-react";
 import PageHero from "../components/PageHero";
 import { vendorEvents } from "../data/vendorPackages";
 
@@ -7,123 +7,108 @@ export default function VendorPackages() {
   return (
     <>
       <PageHero
-        title="Vendor Packages"
-        description="One unforgettable evening of culture, food, and community in North Ajax."
+        title="Get a booth"
+        description="Sell food, crafts or culture to a festival crowd in North Ajax."
+        image="/media/dancer.jpg"
+        imageAlt="A dancer performing on the main stage at the 2026 festival"
+        imagePosition="center 22%"
       />
 
-      <section className="container-page py-20 sm:py-24">
-        <div className="stall-card mx-auto max-w-3xl p-8 sm:p-10">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-dashed border-saffron-200 pb-4">
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-saffron-600">
-              <Mail size={14} /> Letter to Vendors
-            </span>
-            <span className="text-xs font-semibold text-ink/70">October 2026 &middot; North Ajax</span>
+      {/* Letter */}
+      <section className="bg-cream text-night">
+        <div className="container-page grid gap-12 py-20 sm:py-24 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <h2 className="section-heading">A letter to vendors</h2>
+            <p className="mt-5 text-sm text-ink/60">From the organizing team, October 2026</p>
           </div>
-          <div className="mt-5 space-y-4 text-sm leading-relaxed text-ink/90">
+          <article className="space-y-4 rounded-3xl bg-white p-8 leading-relaxed text-ink/85 shadow-card sm:p-12 lg:col-span-8">
             <p>Dear Vendor,</p>
             <p>
-              Thank you for your interest in participating in the Durham
-              Diwali Festival. Our evening celebration features
-              performances, food, vendors, cultural programming, and a
-              signature Diwali experience for the community.
+              Thank you for your interest in participating in the Durham Diwali Festival. Our evening celebration
+              features performances, food, vendors, cultural programming, and a signature Diwali experience for the
+              community.
             </p>
-            <div className="rounded-xl border border-diya-100 bg-diya-50/50 p-4 sm:max-w-sm">
-              <p className="font-display font-bold text-diya-900">
-                Durham Diwali Festival
-              </p>
-              <p className="mt-1 flex items-center gap-1.5 text-xs font-semibold text-saffron-600">
-                <Clock size={13} /> 5:00 p.m. &ndash; 11:00 p.m.
-              </p>
-              <p className="mt-2 text-xs text-ink/80">
-                Organizer: Durham Diwali Festival Organizing Committee
-              </p>
-            </div>
-            <p>
-              We would be delighted to have you join us as a vendor for the
-              evening.
-            </p>
+            <dl className="grid gap-4 border-y border-night/10 py-5 sm:grid-cols-2">
+              <div>
+                <dt className="text-xs font-bold text-rani-dark">Hours</dt>
+                <dd className="font-display text-xl font-bold text-night">5:00 p.m. to 11:00 p.m.</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-bold text-rani-dark">Organizer</dt>
+                <dd className="font-display text-xl font-bold text-night">Durham Diwali Festival Organizing Committee</dd>
+              </div>
+            </dl>
+            <p>We would be delighted to have you join us as a vendor for the evening.</p>
             <p className="pt-2">
               Warm regards,
               <br />
-              Durham Diwali Festival Organizing Team
+              <span className="font-display text-lg font-bold text-night">Durham Diwali Festival Organizing Team</span>
             </p>
-          </div>
+          </article>
         </div>
+      </section>
 
-        <div className="mx-auto mt-16 max-w-2xl text-center">
-          <h2 className="section-heading">Pick your vendor package</h2>
-        </div>
+      {/* Packages */}
+      {vendorEvents.map((event) => (
+        <section key={event.id} className="bg-cream-dark text-night">
+          <div className="container-page py-20 sm:py-24">
+            <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+              <h2 className="section-heading lg:col-span-6">
+                Pick your <span className="text-saffron-600">booth.</span>
+              </h2>
+              <p className="text-ink/70 lg:col-span-5 lg:col-start-8">{event.description}</p>
+            </div>
 
-        <div className="mt-14 space-y-16">
-          {vendorEvents.map((event) => (
-            <div key={event.id}>
-              <div className="flex flex-wrap items-end justify-between gap-3 border-b border-white/10 pb-4">
-                <div>
-                  <h3 className="font-display text-2xl font-extrabold text-saffron-50">
-                    {event.title}
-                  </h3>
-                  <p className="mt-1 flex items-center gap-1.5 text-sm font-semibold text-marigold-300">
-                    <Clock size={14} /> {event.time}
-                  </p>
-                </div>
-              </div>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-saffron-50/60">
-                {event.description}
-              </p>
-
-              <div className="mt-8 grid gap-x-6 gap-y-10 pt-6 sm:grid-cols-2 lg:grid-cols-3">
-                {event.packages.map((pkg) => (
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {event.packages.map((pkg) => {
+                const dark = pkg.featured;
+                return (
                   <div
                     key={pkg.id}
-                    className={`stall-card relative flex flex-col p-6 ${
-                      pkg.featured ? "shadow-lantern ring-2 ring-marigold-400/60" : ""
+                    className={`flex flex-col rounded-3xl p-8 ${
+                      dark ? "bg-marigold-500 text-night" : "bg-white text-ink shadow-card"
                     }`}
                   >
-                    {pkg.featured && (
-                      <span className="absolute -top-3.5 left-6 rounded-full bg-saffron-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow">
-                        Most Popular
-                      </span>
-                    )}
-                    <h4 className="font-display text-lg font-bold text-diya-900">
+                    {dark && <p className="mb-3 text-xs font-bold text-rani-dark">Most popular</p>}
+                    <h3 className={`font-display text-2xl font-extrabold leading-tight `}>
                       {pkg.name}
-                    </h4>
-                    <p className="mt-2 font-display text-2xl font-extrabold text-diya-900">
+                    </h3>
+                    <p className={`mt-3 font-display text-4xl font-extrabold ${dark ? "text-night" : "text-night"}`}>
                       {pkg.price}
                     </p>
-                    <ul className="mt-5 flex-1 space-y-2 text-sm text-ink/90">
+                    <ul className={`mt-6 flex-1 space-y-2.5 border-t pt-6 text-sm ${dark ? "border-night/20" : "border-night/10"}`}>
                       {pkg.benefits.map((b) => (
                         <li key={b} className="flex items-start gap-2.5">
-                          <Check size={14} className="mt-0.5 shrink-0 text-saffron-500" />
+                          <Check size={15} className={`mt-0.5 shrink-0 ${dark ? "text-rani-dark" : "text-saffron-600"}`} />
                           <span>{b}</span>
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      to="/#contact"
-                      className={pkg.featured ? "btn-primary mt-6" : "btn-outline mt-6"}
-                    >
-                      Apply for This Package
+                    <Link to="/#contact" className={`mt-8 ${dark ? "btn-night" : "btn-outline"}`}>
+                      Apply for this package
                     </Link>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
-          ))}
-        </div>
+          </div>
+        </section>
+      ))}
 
-        <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-white/10 bg-white/[0.04] p-10 text-center">
-          <Mail size={24} className="text-marigold-300" />
-          <h3 className="font-display text-xl font-bold text-saffron-50">
-            Ready to apply as a vendor?
-          </h3>
-          <p className="max-w-md text-sm text-saffron-50/60">
-            Send us a message with your business name and the package
-            you&rsquo;re interested in, and our team will follow up with
-            next steps.
-          </p>
-          <Link to="/#contact" className="btn-secondary">
-            Contact Us
+      <section className="bg-cream-dark">
+        <div className="container-page pb-20">
+        <div className="ticket flex flex-col justify-between gap-6 rounded-3xl bg-rani px-8 py-12 sm:px-14 lg:flex-row lg:items-center">
+          <div>
+            <h2 className="font-display text-4xl font-extrabold leading-none tracking-tight">Ready to apply?</h2>
+            <p className="mt-3 max-w-md text-white/85">
+              Send us your business name and the package you&rsquo;re interested in, and we&rsquo;ll follow up with
+              next steps.
+            </p>
+          </div>
+          <Link to="/#contact" className="btn-primary self-start lg:self-auto">
+            Contact the team
           </Link>
+        </div>
         </div>
       </section>
     </>

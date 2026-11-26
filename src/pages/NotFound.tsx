@@ -1,22 +1,18 @@
 import { Link } from "react-router-dom";
-import { StringLights } from "../components/decorative";
 
 export default function NotFound() {
   return (
-    <div className="relative flex min-h-[70vh] flex-col items-center justify-center overflow-hidden bg-night-sky bg-stars py-24 text-center">
-      <StringLights className="absolute inset-x-0 top-0 h-10 w-full text-saffron-300" count={16} height={40} />
-      <div className="container-page flex flex-col items-center">
-        <h1 className="font-marquee text-3xl text-saffron-50 sm:text-4xl">
-          This stall has gone dark.
-        </h1>
-        <p className="mt-4 max-w-md text-saffron-50/60">
-          The page you're looking for doesn't exist. Let's get you back to
-          the celebration.
+    <section className="flex min-h-[70vh] items-center bg-night py-24 text-cream">
+      <div className="container-page">
+        <p className="font-display text-8xl font-extrabold leading-none text-marigold-500">404</p>
+        <h1 className="mt-4 font-display text-5xl font-extrabold leading-none sm:text-6xl">This stall has gone dark.</h1>
+        <p className="mt-5 max-w-md text-cream/70">
+          The page you&rsquo;re looking for doesn&rsquo;t exist. Let&rsquo;s get you back to the celebration.
         </p>
         <Link to="/" className="btn-primary mt-8">
-          Back to Home
+          Back to home
         </Link>
       </div>
-    </div>
+    </section>
   );
 }

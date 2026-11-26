@@ -20,9 +20,9 @@ I designed and built the website for the organizing committee: visual design bui
 
 ## Features
 
-- Single-page home with anchored sections: welcome, mission, vision, team, sponsors, newsletter and contact
+- Single-page home with anchored sections: welcome, 2026 in pictures, mission, vision, team, sponsors and contact
 - Dedicated **Sponsorship Packages** and **Vendor Packages** pages, generated from typed data files
-- **Newsletter** and **contact** forms submitted to Netlify Forms, with honeypot spam protection
+- **Contact** form submitted to Netlify Forms, with honeypot spam protection
 - Downloadable event flyer (PDF)
 - Accessible markup (Lighthouse accessibility score 100) and reduced-motion support
 
@@ -58,7 +58,7 @@ public/                  logo.jpg, flyer (JPG + PDF), team photos, robots.txt
 src/
   App.tsx                Routes: /, /sponsorship-packages, /vendor-packages, 404
   pages/                 One component per route
-  components/home/       Home page sections (Hero, Mission, Vision, Team, Sponsors, Newsletter, Contact)
+  components/home/       Home page sections (Hero, Recap, Mission, Vision, Team, Sponsors, CallToAction, Contact)
   components/            Navbar, Footer, Logo, PageHero, decorative motifs
   data/                  Team roster, sponsorship tiers, vendor packages
   lib/netlifyForms.ts    Form submission helper

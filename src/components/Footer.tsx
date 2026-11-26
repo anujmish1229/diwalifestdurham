@@ -1,107 +1,130 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Mail } from "lucide-react";
 import Logo from "./Logo";
-import { BuntingStrip } from "./decorative";
+import DroneSky from "./DroneSky";
+import { CONTACT_EMAIL, CONTACT_PHONE, FLYER_PDF, HCCD_SITE } from "../data/festival";
+
+const festivalLinks = [
+  { label: "2026 recap", to: "/#recap" },
+  { label: "About the festival", to: "/#mission" },
+  { label: "Organizing team", to: "/#team" },
+  { label: "Our 2026 sponsors", to: "/#sponsors" },
+];
+
+const involvedLinks = [
+  { label: "Support us", to: "/sponsorship-packages" },
+  { label: "Get a booth", to: "/vendor-packages" },
+  { label: "Contact us", to: "/#contact" },
+];
+
+const linkClass = "text-cream/75 transition-colors hover:text-marigold-400";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="border-t border-white/5 bg-[#170822] text-white/80">
-      <BuntingStrip className="h-8 w-full text-saffron-400/70" count={20} height={30} />
-      <div className="container-page grid gap-10 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
-        <div>
-          <Logo />
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
-            Bringing the Festival of Lights to Ajax for the first time in
-            2026, an inclusive, community-centred celebration of music,
-            dance, food, and connection across Durham Region.
-          </p>
-          <div className="mt-5 flex items-center gap-3">
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-saffron-500"
-            >
-              <Facebook size={16} />
-            </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-saffron-500"
-            >
-              <Instagram size={16} />
-            </a>
-            <a
-              href="mailto:info@durhamdiwalifestival.ca"
-              aria-label="Email"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-saffron-500"
-            >
-              <Mail size={16} />
-            </a>
+    <footer className="border-t border-cream/10 bg-night-mid">
+      {/* Drone-show sky: lights assemble into "Diwali" when the footer comes into view */}
+      <div className="relative overflow-hidden bg-gradient-to-b from-night to-night-mid">
+        <div className="container-page pt-12">
+          <DroneSky />
+          <div className="flex flex-col items-center justify-between gap-2 border-b border-cream/10 pb-8 text-center text-sm text-cream/55 sm:flex-row sm:text-left">
+            <p>In honour of Durham Region&rsquo;s first Diwali drone show, October 24, 2026.</p>
+            <p className="hidden sm:block">Move your cursor through the sky.</p>
           </div>
-        </div>
-
-        <div>
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
-            Explore
-          </h3>
-          <ul className="mt-4 space-y-2.5 text-sm">
-            <li><Link to="/#vision" className="transition hover:text-saffron-300">Our Vision</Link></li>
-            <li><Link to="/#team" className="transition hover:text-saffron-300">Our Team</Link></li>
-            <li><Link to="/#sponsors" className="transition hover:text-saffron-300">Sponsors</Link></li>
-            <li><Link to="/#contact" className="transition hover:text-saffron-300">Contact</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
-            Get Involved
-          </h3>
-          <ul className="mt-4 space-y-2.5 text-sm">
-            <li><Link to="/sponsorship-packages" className="transition hover:text-saffron-300">Sponsorship Packages</Link></li>
-            <li><Link to="/vendor-packages" className="transition hover:text-saffron-300">Vendor Packages</Link></li>
-            <li><Link to="/#newsletter" className="transition hover:text-saffron-300">Newsletter Signup</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
-            Presented By
-          </h3>
-          <p className="mt-4 text-sm leading-relaxed text-white/60">
-            The Durham Diwali Festival Organizing Committee, in partnership
-            with the Durham District School Board.
-          </p>
-          <p className="mt-3 text-sm text-white/60">North Ajax, Durham Region · October 2026</p>
-          <a
-            href="https://hccd.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 inline-block text-sm font-semibold text-marigold-300 transition hover:text-saffron-300"
-          >
-            Hindu Community Centre of Durham (HCCD) ↗
-          </a>
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 sm:flex-row">
-          <p>&copy; {year} Durham Diwali Festival. All rights reserved.</p>
-          <p>
-            Made with light, colour, and community.
-            <span className="text-white/30">
-              {" · "}
-              <a
-                href="https://anujmishra.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white/60 transition-colors"
-              >
-                Site by Anuj Mishra
-              </a>
-            </span>
+      <div className="container-page grid gap-12 py-14 md:grid-cols-12">
+        <div className="md:col-span-5">
+          {/* Co-branded lockup: the festival and the organization that presents it */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-4">
+            <div className="flex items-center gap-4">
+              <Logo className="h-16 w-16" />
+              <p className="font-display text-2xl font-bold leading-[1.05] tracking-tight">
+                Durham Diwali
+                <br />
+                <span className="text-marigold-500">Festival</span>
+              </p>
+            </div>
+            <span className="hidden h-12 w-px bg-cream/20 sm:block" aria-hidden="true" />
+            <a href={HCCD_SITE} target="_blank" rel="noopener noreferrer" className="group leading-tight">
+              <span className="block text-xs font-semibold text-cream/50">Presented by</span>
+              <span className="mt-0.5 block font-display text-base font-bold text-cream transition-colors group-hover:text-rani-light">
+                Hindu Community
+                <br />
+                Centre of Durham <span className="text-rani-light">↗</span>
+              </span>
+            </a>
+          </div>
+          <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/65">
+            A free, community-centred celebration of the Festival of Lights in North Ajax, first held on October 24,
+            2026. HCCD brings Hindu festivals, seniors&rsquo; trips and community programs to Durham Region all year
+            round.
           </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-8 text-sm sm:grid-cols-3 md:col-span-7">
+          <div>
+            <p className="font-display text-base font-bold">Festival</p>
+            <ul className="mt-4 space-y-2.5">
+              {festivalLinks.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className={linkClass}>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="font-display text-base font-bold">Get involved</p>
+            <ul className="mt-4 space-y-2.5">
+              {involvedLinks.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className={linkClass}>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a href={FLYER_PDF} download="Durham Diwali Festival Flyer.pdf" className={linkClass}>
+                  2026 flyer (PDF)
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-2 sm:col-span-1">
+            <p className="font-display text-base font-bold">Contact</p>
+            <ul className="mt-4 space-y-2.5 text-cream/75">
+              <li>
+                <a href={`mailto:${CONTACT_EMAIL}`} className={`${linkClass} break-all`}>
+                  {CONTACT_EMAIL}
+                </a>
+              </li>
+              <li>{CONTACT_PHONE}</li>
+              <li>North Ajax, Durham Region, Ontario</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-cream/10">
+        <div className="container-page flex flex-col justify-between gap-3 py-5 text-xs text-cream/50 sm:flex-row sm:items-center">
+          <p>© {year} Durham Diwali Festival Organizing Committee</p>
+          <div className="flex items-center gap-6">
+            <a
+              href="https://anujmishra.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cream/35 transition-colors hover:text-cream/70"
+            >
+              Site by Anuj Mishra
+            </a>
+            <button type="button" onClick={toTop} className="text-cream/70 transition-colors hover:text-marigold-400">
+              Back to top ↑
+            </button>
+          </div>
         </div>
       </div>
     </footer>
