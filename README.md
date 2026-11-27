@@ -4,8 +4,25 @@ Website for the **Durham Diwali Festival**, the first Diwali (Festival of Lights
 
 **Live site:** https://diwalifestdurham.netlify.app
 
-![Durham Diwali Festival home page](docs/screenshot.png)
-<!-- TODO: add a 1280×800 screenshot of the home page at docs/screenshot.png -->
+![Durham Diwali Festival home page](docs/screenshots/home.jpg)
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/sponsors.jpg" alt="Durham Diwali Festival sponsors page"></td>
+    <td width="50%"><img src="docs/screenshots/vendors.jpg" alt="Durham Diwali Festival vendors page"></td>
+  </tr>
+  <tr>
+    <td align="center">Sponsors</td>
+    <td align="center">Vendors</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/mobile-home.jpg" width="260" alt="Home on a phone"><br>Home on a phone</td>
+    <td align="center"><img src="docs/screenshots/mobile-sponsors.jpg" width="260" alt="Sponsors on a phone"><br>Sponsors on a phone</td>
+  </tr>
+</table>
 
 ## Who it's for
 
